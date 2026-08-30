@@ -4,14 +4,14 @@ using System.Threading;
 using System.Threading.Tasks;
 namespace Soenneker.Apollo.OpenApiClientUtil.Abstract;
 /// <summary>
-/// Exposes a cached OpenAPI client instance.
+/// Creates and caches an authenticated <see cref="ApolloOpenApiClient"/>.
 /// </summary>
 public interface IApolloOpenApiClientUtil: IDisposable, IAsyncDisposable
 {
     /// <summary>
-    /// Returns the configured apollo OpenAPI Client used by the Apollo OpenAPI Client.
+    /// Gets the cached generated client, creating it on first use.
     /// </summary>
     /// <param name="cancellationToken">Token used to cancel the operation.</param>
-    /// <returns>A task whose result is the requested apollo OpenAPI Client.</returns>
+    /// <returns>The cached Apollo client.</returns>
     ValueTask<ApolloOpenApiClient> Get(CancellationToken cancellationToken = default);
 }

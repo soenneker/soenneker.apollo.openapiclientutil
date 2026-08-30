@@ -1,6 +1,7 @@
 [![](https://img.shields.io/nuget/v/soenneker.apollo.openapiclientutil.svg?style=for-the-badge)](https://www.nuget.org/packages/soenneker.apollo.openapiclientutil/)
 [![](https://img.shields.io/github/actions/workflow/status/soenneker/soenneker.apollo.openapiclientutil/publish-package.yml?style=for-the-badge)](https://github.com/soenneker/soenneker.apollo.openapiclientutil/actions/workflows/publish-package.yml)
 [![](https://img.shields.io/nuget/dt/soenneker.apollo.openapiclientutil.svg?style=for-the-badge)](https://www.nuget.org/packages/soenneker.apollo.openapiclientutil/)
+[![](https://img.shields.io/github/actions/workflow/status/soenneker/soenneker.apollo.openapiclientutil/codeql.yml?label=CodeQL&style=for-the-badge)](https://github.com/soenneker/soenneker.apollo.openapiclientutil/actions/workflows/codeql.yml)
 
 # Soenneker.Apollo.OpenApiClientUtil
 
@@ -89,7 +90,8 @@ Kiota throws generated endpoint-specific exceptions for mapped error responses, 
 
 - `Get` initializes the generated client on first use and returns the cached instance afterward.
 - The generated client and its `HttpClient` are intended for reuse across calls.
-- Authentication and base-address configuration is captured during initialization. Recreate the owning DI scope or service when those values must change.
+- Authentication and base-address configuration is captured during initialization. Rebuild the client stack when those values must change; creating another scope still reuses the singleton HTTP client.
+- A scoped utility owns its generated client wrapper, while the underlying cached `HttpClient` remains owned by the singleton HTTP-client cache.
 - Let the dependency-injection container dispose the utility. If you construct it manually, dispose it with `Dispose` or `DisposeAsync`.
 - Registration uses `TryAdd`, so an earlier application-provided `IApolloOpenApiClientUtil` is preserved.
 

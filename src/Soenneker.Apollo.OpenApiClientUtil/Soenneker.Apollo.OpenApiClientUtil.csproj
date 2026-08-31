@@ -44,8 +44,8 @@
 
     <ItemGroup>
         <PackageReference Include="Soenneker.Kiota.GenericAuthenticationProvider" Version="4.0.41" />
-        <PackageReference Include="Soenneker.Apollo.HttpClients" Version="4.0.20" />
+        <PackageReference Include="Soenneker.Apollo.HttpClients" Version="4.0.21" />
         <PackageReference Include="Soenneker.Apollo.OpenApiClient" Version="4.0.10" />
-        <PackageReference Include="Soenneker.Utils.AsyncSingleton" Version="4.0.820" />
+        <PackageReference Include="Soenneker.Utils.AsyncSingleton" Version="4.0.829" />
     </ItemGroup>
 </Project>

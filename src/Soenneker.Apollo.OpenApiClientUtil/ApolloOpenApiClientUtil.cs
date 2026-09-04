@@ -14,6 +14,7 @@ using Soenneker.Utils.AsyncSingleton;
 
 namespace Soenneker.Apollo.OpenApiClientUtil;
 
+/// <inheritdoc cref="IApolloOpenApiClientUtil" />
 public sealed class ApolloOpenApiClientUtil : IApolloOpenApiClientUtil
 {
     private readonly AsyncSingleton<ApolloOpenApiClient> _client;

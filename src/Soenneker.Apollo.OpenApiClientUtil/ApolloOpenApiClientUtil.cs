@@ -25,7 +25,7 @@ public sealed class ApolloOpenApiClientUtil : IApolloOpenApiClientUtil
         {
             HttpClient httpClient = await httpClientUtil.Get(token).NoSync();
 
-            var apiKey = configuration.GetValueStrict<string>("Apollo:ApiKey");
+            var apiKey = configuration.GetStringStrict("Apollo:ApiKey");
             string authHeaderName = configuration["Apollo:AuthHeaderName"] ?? "x-api-key";
             string authHeaderValueTemplate = configuration["Apollo:AuthHeaderValueTemplate"] ?? "{token}";
             string authHeaderValue = authHeaderValueTemplate.Replace("{token}", apiKey, StringComparison.Ordinal);

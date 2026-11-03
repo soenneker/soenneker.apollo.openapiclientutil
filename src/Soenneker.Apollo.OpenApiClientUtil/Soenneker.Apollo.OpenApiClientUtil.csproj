@@ -47,7 +47,7 @@
 
     <ItemGroup>
         <PackageReference Include="Soenneker.Kiota.GenericAuthenticationProvider" Version="11.0.59" />
-        <PackageReference Include="Soenneker.Apollo.HttpClients" Version="11.0.91" />
+        <PackageReference Include="Soenneker.Apollo.HttpClients" Version="11.0.92" />
         <PackageReference Include="Soenneker.Apollo.OpenApiClient" Version="11.0.55" />
     </ItemGroup>
 </Project>

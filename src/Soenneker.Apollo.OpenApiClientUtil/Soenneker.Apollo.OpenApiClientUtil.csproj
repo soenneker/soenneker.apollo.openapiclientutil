@@ -48,6 +48,6 @@
     <ItemGroup>
         <PackageReference Include="Soenneker.Kiota.GenericAuthenticationProvider" Version="11.0.62" />
         <PackageReference Include="Soenneker.Apollo.HttpClients" Version="11.0.108" />
-        <PackageReference Include="Soenneker.Apollo.OpenApiClient" Version="11.0.68" />
+        <PackageReference Include="Soenneker.Apollo.OpenApiClient" Version="11.0.69" />
     </ItemGroup>
 </Project>
